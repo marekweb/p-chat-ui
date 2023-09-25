@@ -2,6 +2,7 @@ import { ChatMessage } from "../../completion/ChatMessage"
 import { LoadingIndicator } from "../../components/LoadingIndicator"
 import { ChatHistoryEntry } from "./ChatHistoryEntry"
 import { Intro } from "./Intro"
+import { useAppSelector } from "../../app/hooks"
 
 interface ChatHistoryProps {
   messages: ChatMessage[]
@@ -11,10 +12,12 @@ interface ChatHistoryProps {
 
 export const ChatHistory: React.FunctionComponent<ChatHistoryProps> = ({
   messages,
-  hideSystemPrompt = true,
   isLoading = false,
 }) => {
-  if (hideSystemPrompt) {
+  const showSystemPrompt = useAppSelector(
+    (state) => state.chat.showSystemPrompt,
+  )
+  if (!showSystemPrompt) {
     messages = messages.filter((message) => message.role !== "system")
   }
 

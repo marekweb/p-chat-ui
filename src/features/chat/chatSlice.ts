@@ -17,7 +17,7 @@ export interface ChatState {
   apiMode: "openai" | "mock"
 }
 
-const initialState: ChatState = {
+export const initialState: ChatState = {
   apiKey: localStorage.getItem("apiKey"),
   systemPrompt:
     "You are an assistant who helps the user with their legal, regulatory, and compliance queries.",
@@ -42,7 +42,6 @@ export const makeChatCompletionRequest = createAsyncThunk<
     const messagesForRequest = [...state.chat.messages, message]
 
     dispatch(chatSlice.actions.updateInputText(""))
-    dispatch(chatSlice.actions.addMessage(message))
     dispatch(chatSlice.actions.startLoading())
 
     if (state.chat.messages.length === 0 && state.chat.systemPrompt) {
@@ -53,6 +52,8 @@ export const makeChatCompletionRequest = createAsyncThunk<
       dispatch(chatSlice.actions.addMessage(systemPromptMessage))
       messagesForRequest.unshift(systemPromptMessage)
     }
+
+    dispatch(chatSlice.actions.addMessage(message))
 
     const request: ChatCompletionRequest = {
       model: "gpt-3.5-turbo",
