@@ -1,5 +1,10 @@
 import { useCallback } from "react"
 
+/**
+ * Text field component
+ *
+ * Based on: Tailwind UI components
+ */
 export const TextArea: React.FunctionComponent<{
   label?: string
   value: string
