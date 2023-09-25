@@ -11,6 +11,15 @@ Created with:
 - [Vite](https://vitejs.dev/)
 - Template: [reduxjs/redux-templates/packages/vite-template-redux](https://github.com/reduxjs/redux-templates)
 
+## How to run
+
+1. Run `npm install`
+2. Run `npm start` to start the application.
+3. Open the browser to `http://localhost:5174`
+4. Enter your OpenAI API key in Settings
+5. Start a conversation by sending a first message.
+6. Click "New Conversation" afterwards to reset the conversation.
+
 ## Scripts
 
 - `npm start` - start dev server and open browser

@@ -17,7 +17,9 @@ export const Intro = () => {
           Settings.
         </button>
       </p>
-      <p>Start a new conversation by sending a message below.</p>
+      <p>
+        This is a new conversation. Send a message using the chat input below.
+      </p>
     </Card>
   )
 }
