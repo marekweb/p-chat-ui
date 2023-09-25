@@ -1,7 +1,7 @@
 import { useCallback } from "react"
 
 /**
- * Text field component
+ * Text area component
  *
  * Based on: Tailwind UI components
  */
@@ -22,7 +22,7 @@ export const TextArea: React.FunctionComponent<{
     [onEnter, disabled],
   )
   return (
-    <div className="">
+    <div className="pt-4">
       {label && (
         <label className="block text-sm font-medium leading-6 text-gray-900">
           {label}

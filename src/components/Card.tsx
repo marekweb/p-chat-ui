@@ -9,7 +9,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   className = "",
 }) => (
   <div
-    className={`max-w-md mx-auto rounded-lg py-4 px-8 my-12 border border-gray-200 bg-white shadow-md ${className}`}
+    className={`max-w-lg mx-auto rounded-lg py-4 px-8 my-12 border border-gray-200 bg-white shadow-md ${className}`}
   >
     {children}
   </div>

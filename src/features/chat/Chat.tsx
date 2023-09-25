@@ -5,7 +5,7 @@ import { Card } from "../../components/Card"
 import { ChatInput } from "./ChatInput"
 import { Button } from "../../components/Button"
 import { Settings } from "./Settings"
-import { ChatHistory } from "./ChatHIstory"
+import { ChatHistory } from "./ChatHistory"
 import { TabLink } from "./TabLink"
 
 export const Chat = () => {
@@ -35,7 +35,7 @@ export const Chat = () => {
   return (
     <div className="static">
       <ChatHistory messages={messages} isLoading={isLoading} />
-      <div className="fixed bottom-0 left-0 right-0">
+      <div className="fixed bottom-0 left-0 right-0 bg-gray-100">
         <Card>
           <div>
             <TabLink label="Chat" tab="chat" activeTab={activeTab} />

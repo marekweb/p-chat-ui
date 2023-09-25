@@ -4,6 +4,7 @@ import { ChatCompletionRequest } from "../../completion/ChatCompletionRequest"
 import { makeOpenAIChatCompletionRequest } from "../../completion/makeOpenAICompletionRequest"
 import { RootState } from "../../app/store"
 import { makeMockRequest } from "../../completion/makeMockRequest"
+import { scrollToBottom } from "./scrollToBottom"
 
 export interface ChatState {
   apiKey: string | null
@@ -96,6 +97,7 @@ export const chatSlice = createSlice({
       state.messages.push(action.payload)
     },
     startLoading(state) {
+      setTimeout(scrollToBottom, 100)
       state.isLoading = true
     },
     finishLoading(state) {
@@ -125,6 +127,7 @@ export const chatSlice = createSlice({
     builder.addCase(makeChatCompletionRequest.fulfilled, (state, action) => {
       state.messages.push(action.payload)
       state.isLoading = false
+      setTimeout(scrollToBottom, 100)
     })
 
     builder.addCase(makeChatCompletionRequest.rejected, (state, action) => {

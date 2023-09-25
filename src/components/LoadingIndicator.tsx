@@ -12,5 +12,9 @@ export const LoadingIndicator = () => {
     return () => clearInterval(interval)
   }, [])
 
-  return <div>{".".repeat(state) || <>&nbsp;</>}</div>
+  return (
+    <div className="text-center text-lg font-bold">
+      {".".repeat(state) || <>&nbsp;</>}
+    </div>
+  )
 }

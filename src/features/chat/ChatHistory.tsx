@@ -19,7 +19,7 @@ export const ChatHistory: React.FunctionComponent<ChatHistoryProps> = ({
   }
 
   return (
-    <div style={{ paddingBottom: "280px" }}>
+    <div style={{ paddingBottom: "350px" }}>
       {messages.length === 0 && <Intro />}
 
       {messages.map((message, index) => (
