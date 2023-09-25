@@ -1,5 +1,5 @@
-import chatReducer, { chatSlice, initialState } from "./chatSlice"
 import { ChatMessage } from "../../completion/ChatMessage"
+import chatReducer, { chatSlice, initialState } from "./chatSlice"
 
 describe("chat reducer", () => {
   it("should handle initial state", () => {
@@ -48,13 +48,8 @@ describe("chat reducer", () => {
 })
 
 import { configureStore } from "@reduxjs/toolkit"
-import { createAsyncThunk } from "@reduxjs/toolkit"
-import reducer, {
-  makeChatCompletionRequest,
-  chatSlice,
-  initialState,
-} from "./chatSlice"
 import { RootState } from "../../app/store"
+import reducer, { makeChatCompletionRequest } from "./chatSlice"
 
 describe("async thunk tests", () => {
   it("makeChatCompletionRequest adds a message when in mock mode", async () => {

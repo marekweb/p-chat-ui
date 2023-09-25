@@ -22,7 +22,7 @@ export const TextField: React.FunctionComponent<{
         value={value}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
-        className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+        className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
       />
     </div>
   </div>
