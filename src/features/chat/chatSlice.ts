@@ -61,7 +61,6 @@ export const makeChatCompletionRequest = createAsyncThunk<
       temperature: 1.0,
     }
 
-    console.log("Using API key", apiKey)
     if (!apiKey) {
       throw new Error("API key is not set")
     }
